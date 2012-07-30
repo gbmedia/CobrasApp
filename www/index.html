@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--[if IE 7]><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name = "format-detection" content = "telephone=no"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.1.1.css" />
+    <link rel="stylesheet" type="text/css" href="css/CapeCobras.css" />
+    <link rel="stylesheet" type="text/css" href="css/touchui_debug.css" />
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.1.1.js"></script>
+    <script type="text/javascript" src="cordova-2.0.0.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+    <script type="text/javascript">
+      app.initialize();
+    </script>
+
+    <title>CobraApp</title>
+  </head>
+  <body>
+    <div data-role="page" data-theme="a">
+      <div data-role="header" data-theme="a">
+        <h2>FanGtastic</h2>
+      </div>
+
+      <div data-role="content">
+        <div  data-role="controlgroup">
+          <a href="/" data-role="button" data-icon="home">Home</a>
+          <a href="#events" data-role="button" data-icon="grid">Events</a>
+          <a href="#" data-role="button" data-icon="grid">Players</a>
+          <a href="#" data-role="button" data-icon="grid">Live Scores</a>
+          <a href="#twitter" data-role="button" data-icon="star">Twitter</a>
+        </div>
+      </div>
+      <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#">Tata</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div data-role="page" id="twitter" data-theme="a">
+      <div data-role="header" data-theme="a">
+        <h2>Twitter</h2>
+      </div>
+
+      <div data-role="content">
+        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+          new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 5,
+          interval: 5000,
+          width: 'auto',
+          height: 300,
+          theme: {
+          shell: {
+          background: '#D7A611',
+          color: '#000000'
+          },
+          tweets: {
+          background: '#1A357C',
+          color: '#ffffff',
+          links: '#07e3eb'
+          }
+          },
+          features: {
+          scrollbar: true,
+          loop: false,
+          live: true,
+          behavior: 'all'
+          }
+          }).render().setUser('cobrascricket').start();
+        </script>
+      </div>
+      <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#">Tata</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div data-role="page" id="events" data-theme="a">
+      <div data-role="header" data-theme="a">
+        <h2>Events</h2>
+      </div>
+
+      <div data-role="content">
+        <ul data-role="listview" data-theme="c">
+          <li>
+            <h3>Cobras vs Titans</h3>
+            <p>
+              <strong>Season opener.</strong>
+            </p>
+            <p>
+              <a href="#map">Supersport Park, Centurion</a>
+            </p>
+            <p class="ui-li-aside">
+              <strong>3 August 2012, 16:00</strong>PM
+            </p>
+          </li>
+          <li>
+            <h3>Cobras vs Eagles</h3>
+            <p>
+              <strong>Season opener.</strong>
+            </p>
+            <p>
+              <a href="#map">Newland, Cape Town</a>
+            </p>
+            <p class="ui-li-aside">
+              <strong>10 August 2012, 16:00</strong>PM
+            </p>
+          </li>
+          <li>
+            <h3>Cobras vs Warriors</h3>
+            <p>
+              <strong>Season opener.</strong>
+            </p>
+            <p>
+              <a href="#map">Sahara Stadium, PE</a>
+            </p>
+            <p class="ui-li-aside">
+              <strong>17 August 2012, 16:00</strong>PM
+            </p>
+          </li>
+          <li>
+            <h3>Cobras vs Dolphins</h3>
+            <p>
+              <strong>Season opener.</strong>
+            </p>
+            <p>
+              <a href="#map">Kingsmead, Durban</a>
+            </p>
+            <p class="ui-li-aside">
+              <strong>24 August 2012, 16:00</strong>PM
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#">Tata</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div data-role="page" id="map">
+      <div data-role="header" data-theme="a">
+        <h2>Map</h2>
+      </div>
+
+      <div data-role="content" style="padding: 15px">
+        <img id="scrTag" src="https://maps.googleapis.com/maps/api/staticmap?center=Cape Town&amp;zoom=14&amp;size=288x200&amp;markers=&amp;sensor=false"
+        width="288" height="200">
+        </div>
+
+      <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#events">Events</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function goto(location)
+      {
+      if (location == "CPT")
+        $("#srcTag").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=Cape Town&amp;zoom=14&amp;size=288x200&amp;markers=&amp;sensor=false");
+      else if (location == "DBN")
+        $("#srcTag").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=Durban&amp;zoom=14&amp;size=288x200&amp;markers=&amp;sensor=false");
+      else if (location == "CENT")
+        $("#srcTag").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=Centurion&amp;zoom=14&amp;size=288x200&amp;markers=&amp;sensor=false");
+      else if (location == "PE")
+        $("#srcTag").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=Port Elizabeth&amp;zoom=14&amp;size=288x200&amp;markers=&amp;sensor=false");
+      }
+    </script>
+  </body>
+</html>
