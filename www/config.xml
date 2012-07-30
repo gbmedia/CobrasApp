@@ -15,8 +15,6 @@
     Coenraad Fick
   </author>
 
-  <icon src="img/cordova.png" gap:role="default" />
-
   <!--<feature name="http://api.phonegap.com/1.0/geolocation"/>
   <feature name="http://api.phonegap.com/1.0/network"/>
 
